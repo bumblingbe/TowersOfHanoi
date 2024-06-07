@@ -5,8 +5,8 @@ def hanoi(n,start,end):
     else:
         #declare 'middle' rod option
         rodOptions = [1,2,3]
-        rodOptions.pop(start)
-        rodOptions.pop(end)
+        rodOptions.remove(start)
+        rodOptions.remove(end)
         middle = rodOptions[0]
         
         #move all-but-base to middle

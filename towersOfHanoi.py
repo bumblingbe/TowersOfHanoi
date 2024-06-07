@@ -9,23 +9,36 @@ def hanoi(n,start,end):
     '''
 
     # validate parameters
+    # turn n, start, end into floats if not already
+    try:
+        n = float(n)
+        start = float(start)
+        end = float(end)
+    except ValueError:
+        print('Please enter positive whole numbers only.')
+        return
+    # check all args are positive whole numbers
     def checkPosInt(n,start,end):
         for arg in [n,start,end]:
             if arg%1 != 0 or arg<=0:
                 return 'invalid'
     if checkPosInt(n,start,end)== 'invalid':
-        print("Error: all arguments must be positive whole numbers greater than zero.")
+        print("All arguments must be positive whole numbers greater than zero.")
         return
-
-    if start == end:
-        print("'start' must be different to 'end'")
-        return
-
+    # turn into int's
+    n = int(n)
+    start = int(start)
+    end = int(end)
+    # check start rod and end rod are 1, 2 or 3
     for pos in [start, end]:
         if pos not in [1,2,3]:
             print("'start' and 'end' must be 1, 2, or 3.")
-            return            
-
+            return
+    # check start rod and end rod are different
+    if start == end:
+        print("'start' must be different to 'end'")
+        return
+    
     # print instructions themselves
     if n == 1:
         # base case: only 1 block

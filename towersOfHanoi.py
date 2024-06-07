@@ -23,7 +23,8 @@ def hanoi(n,start,end):
 
     for pos in [start, end]:
         if pos not in [1,2,3]:
-            print("'start' and 'end' must be 1, 2, or 3")
+            print("'start' and 'end' must be 1, 2, or 3.")
+            return            
 
     # print instructions themselves
     if n == 1:

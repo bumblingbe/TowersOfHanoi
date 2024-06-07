@@ -1,6 +1,3 @@
-!pip install PyInputPlus
-import pyinputplus as pyip
-
 # define function for n blocks, starting on rod 'start' and ending on rod 'end'.
 # assumptions: n is positive, three rods (numbered 1, 2 and 3).
 def hanoi(n,start,end):
